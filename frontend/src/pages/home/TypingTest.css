@@ -1,0 +1,17 @@
+span.active {
+    border-bottom: 3px solid blue ;
+}
+
+span.correct {
+    color: green;
+}
+
+span.incorrect {
+    color: red;
+}
+
+input.typing-input {
+    opacity: 0;
+    z-index: -999;
+    position: absolute;
+  }
