@@ -1,13 +1,12 @@
 import {generate, count} from "random-words";
 import { useEffect, useRef, useState } from "react";
-import { MdRefresh } from "react-icons/md";
 import { useUser } from "@clerk/clerk-react";
 import { useTestRecords } from "../../contexts/testRecordsContext";
 
 import "./TypingTest.css"
 
 export const TypingTest = () => {
-    let wordList : string[] = generate({exactly: 100}) as string[];
+    let wordList : string[] = generate({exactly: 80}) as string[];
     let maxTime = 30;
 
     const inputRef = useRef<HTMLInputElement>(document.createElement("input"));
@@ -22,7 +21,6 @@ export const TypingTest = () => {
     const [corr, setCorr] = useState(Array(charRefs.current.length).fill(""));
     const [wpm, setWpm] = useState(0);
 
-    const timer = useRef();
 
     useEffect(() => {
         inputRef.current.focus();
@@ -80,36 +78,6 @@ export const TypingTest = () => {
         <span key={`${char}_${idx}`} ref={(e) => charRefs.current[idx] = e!} className={`char ${idx === charIdx ? " active": ""} ${corr[idx]}`}>{char}</span>
     ))
 
-    const handleOnChange = (event: { target: { value: any; }; }) => {
-        console.log(charIdx);
-        // const characters = charRefs.current;
-        // const currChar = charRefs.current[charIdx].innerText;
-
-        // const typedChars = event.target.value;
-        // const lastTypedChar = typedChars.slice(-1);
-
-        // if (timeLeft > 0) {
-        //     if (!isTyping) {
-        //         setIsTyping(true);
-        //     }
-
-        //     if (currChar === lastTypedChar) {
-        //         corr[charIdx] = " correct ";
-
-        //     }
-        //     else {
-        //         corr[charIdx] = " incorrect ";
-        //     }
-        //     console.log(currChar);
-        //     console.log(lastTypedChar);
-        //     console.log(corr);
-        //     setCharIdx(typedChars.length);
-            
-        // }
-        // else {
-        //     setIsTyping(false);
-        // }
-    }
 
     const handleKeyDown = (event: any) => {
         if (event.key.length === 1 && timeLeft > 0) {
@@ -146,13 +114,20 @@ export const TypingTest = () => {
     }
 
 
-    return <div className="typing-test">
+    return (
+    <div className="typing-test">
         <input className="typing-input" type="text" ref={inputRef} onKeyDown={handleKeyDown}/>
-        <p>Time Left: <strong>{timeLeft}</strong> WPM: <strong>{!isTyping ? wpm: ""}</strong></p>
+        <p className="stats-bar">
+            Time Left: <strong className="stat-value">{timeLeft}</strong> 
+            WPM: <strong className="stat-value">{!isTyping ? wpm: ""}</strong>
+        </p>
+        <div className="words-container">
         {wordSpans}
+        </div>
+        
         <br></br>
-        <button onClick={handleRestart}>
+        <button className="restart-button" onClick={handleRestart}>
             Restart
         </button>
-    </div>
+    </div>)
 }

@@ -1,6 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { WebNavbar } from "./WebNavbar";
+import { WebNavbar } from "../../components/WebNavbar";
 import { TypingTest } from "./TypingTest";
+import "../../index.css"
 
 export const Home = () => {
 

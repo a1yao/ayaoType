@@ -1,0 +1,33 @@
+.auth-container {
+    display: flex;
+    gap: 10px;
+    margin: 10px;
+  }
+  
+  /* Target only Sign In and Sign Up buttons */
+  .auth-container .cl-signIn-button,
+  .auth-container .cl-signUp-button {
+    background-color: #4285f4 !important;
+    color: white !important;
+    border: none !important;
+    padding: 12px 24px !important;
+    font-size: 16px !important;
+    border-radius: 20px !important;
+    cursor: pointer !important;
+    transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+  }
+  
+  .auth-container .cl-signIn-button:hover,
+  .auth-container .cl-signUp-button:hover {
+    background-color: #3367d6 !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15) !important;
+  }
+  
+  .auth-container .cl-signIn-button:active,
+  .auth-container .cl-signUp-button:active {
+    transform: translateY(0) !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+  }
+  

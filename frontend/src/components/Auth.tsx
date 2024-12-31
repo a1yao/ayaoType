@@ -1,4 +1,5 @@
 import { SignedIn, SignedOut, SignInButton, SignUpButton, UserButton, } from "@clerk/clerk-react"
+import "./Auth.css"
 
 export const Auth = () => {
     return <div className="auth-container">

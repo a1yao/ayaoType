@@ -1,0 +1,116 @@
+.navbar {
+    background-color: #ffffff !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1030;
+    padding: 0.5rem 1rem;
+  }
+  
+  .navbar .container {
+    max-width: 1400px;
+    width: 95%;
+    margin: 0 auto;
+  }
+  
+  .navbar-brand {
+    font-weight: bold;
+    color: #4285f4 !important;
+    font-size: 1.5rem;
+  }
+  
+  .navbar-nav .nav-link {
+    color: #333333 !important;
+    font-size: 1rem;
+    padding: 0.5rem 1rem !important;
+    margin: 0 0.25rem;
+    border-radius: 9999px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+  
+  .navbar-nav .nav-link:hover,
+  .navbar-nav .nav-link:focus {
+    background-color: #f0f0f0;
+    color: #4285f4 !important;
+  }
+  
+  .navbar-toggler {
+    border-color: #4285f4;
+  }
+  
+  .navbar .auth-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar .auth-container .cl-signIn-button,
+  .navbar .auth-container .cl-signUp-button {
+    background-color: #4285f4 !important;
+    color: white !important;
+    border: none !important;
+    padding: 8px 16px !important;
+    font-size: 0.9rem !important;
+    border-radius: 9999px !important;
+    cursor: pointer !important;
+    transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+    margin: 0 0.25rem !important;
+  }
+  
+  .navbar .auth-container .cl-signIn-button:hover,
+  .navbar .auth-container .cl-signUp-button:hover {
+    background-color: #3367d6 !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15) !important;
+  }
+  
+  .navbar .auth-container .cl-signIn-button:active,
+  .navbar .auth-container .cl-signUp-button:active {
+    transform: translateY(0) !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+  }
+  
+  /* UserButton styles */
+  .navbar .auth-container .cl-userButtonBox {
+    margin: 0 0.25rem;
+  }
+  
+  .navbar .auth-container .cl-userButtonTrigger {
+    border-radius: 9999px !important;
+  }
+  
+
+
+  body {
+    padding-top: 70px;
+  }
+  
+  .navbar-collapse {
+    justify-content: space-between;
+  }
+  
+  .profile-link {
+    margin-right: 0.5rem;
+  }
+  
+
+  @media (max-width: 991px) {
+    .navbar-nav {
+      width: 100%;
+    }
+    
+    .navbar .auth-container {
+      margin-top: 0.5rem;
+    }
+  
+    .navbar-collapse {
+      justify-content: flex-start;
+    }
+  
+    .navbar-nav.ms-auto {
+      margin-left: 0 !important;
+    }
+  }
+  
